@@ -18,7 +18,7 @@ import { body, validationResult } from 'express-validator';
     if (!errors.isEmpty()) {
       // If there are validation errors, render the form again with error messages
       let dropdownContent = "Guest";
-      return res.render('user-register', { errors: errors.array(), dropdownContent  });
+      return res.render('user-register', { errors: errors.array(), dropdownContent ,req:req });
     }
     // If validation succeeds, continue to the next middleware
     next();
