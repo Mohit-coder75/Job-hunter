@@ -1,0 +1,263 @@
+<style>
+   
+   body {
+        font-family: 'Josefin Sans', sans-serif;
+        box-sizing: border-box;
+        width:100%;
+        height: auto;
+    }
+    .container-fluid {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background: #FFF;
+    }
+    .background {
+        background: linear-gradient(132deg, #FC415A, #591BC5, #212335);
+        background-size: 400% 400%;
+        animation: Gradient 15s ease infinite;
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        padding: 0;
+        margin: 0px;
+    }
+    .cube {
+        position: absolute;
+        top: 80vh;
+        left: 45vw;
+        width: 10px;
+        height: 10px;
+        border: solid 1px #D7D4E4;
+        transform-origin: top left;
+        transform: scale(0) rotate(0deg) translate(-50%, -50%);
+        animation: cube 12s ease-in forwards infinite;
+    }
+    .cube:nth-child(2n) {
+        border-color: #FFF ;
+    }
+    .cube:nth-child(2) {
+        animation-delay: 2s;
+        left: 25vw;
+        top: 40vh;
+    }
+    .cube:nth-child(3) {
+        animation-delay: 4s;
+        left: 75vw;
+        top: 50vh;
+    }
+    .cube:nth-child(4) {
+        animation-delay: 6s;
+        left: 90vw;
+        top: 10vh;
+    }
+    .cube:nth-child(5) {
+        animation-delay: 8s;
+        left: 10vw;
+        top: 85vh;
+    }
+    .cube:nth-child(6) {
+        animation-delay: 10s;
+        left: 50vw;
+        top: 10vh;
+    }
+    header {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    nav {
+        color: #FFF;
+        float: right;
+        margin: 30px 90px;
+    }
+    nav ul {
+        list-style: none;
+    }
+    nav ul li {
+        float: left;
+        transition: .3s;
+    }
+    nav ul li a {
+        text-decoration: none;
+        color: #EFEEF5;
+        transition: .5;
+        font-size: 15px;
+        margin-left: 26px;
+        padding-right: 20px;
+    }
+    nav ul li:hover a {
+        text-decoration: none;
+        color: #591BC5;
+    }
+    nav ul li:hover {
+   
+    background: #EFEEF5;
+    /* text-decoration: none; */
+    /* Add border */
+    border-radius: 5px; /* Add border radius */
+}
+.logo {
+        width: 90px;
+        height: 90px;
+        background: linear-gradient(45deg, #FC415A, #591BC5);
+        margin: 40px 63px;
+        float: left;
+        transform: rotate(-30deg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+    .logo:hover {
+        transform: rotate(-30deg) scale(1.1);
+    }
+    .logo span {
+        color: #FFF;
+        font-size: 1.5em;
+        line-height: 1.4;
+        font-weight: bold;
+        transform: rotate(30deg);
+        padding-left: 7px;
+    }
+    .header-content {
+        margin-top: 25%;
+        text-align: center;
+        color: #EFEEF5;
+    }
+    .header-content h1 {
+        text-transform: uppercase;
+        font-size: 3em;
+        letter-spacing: 1px;
+    }
+    .header-content p {
+        font-size: 20px;
+        line-height: 1.5;
+        margin: 20px auto;
+    }
+    .header-content button {
+        width: 140px;
+        margin: 20px 10px;
+        color: #591BC5;
+        font-size: 17px;
+        border: 1px solid #EFEEF5;
+        font-weight: 500;
+        background: #EFEEF5;
+        border-radius: 20px;
+        padding: 10px;
+        cursor: pointer;
+        transition: .3s;
+    }
+    .header-content button:hover {
+        border-radius: 0;
+    }
+    @keyframes Gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    @keyframes cube {
+        from {
+            transform: scale(0) rotate(0deg) translate(-50%, -50%);
+            opacity: 1;
+        }
+        to {
+            transform: scale(20) rotate(960deg) translate(-50%, -50%);
+            opacity: 0;
+        }
+    }
+   
+        .success-message, .error-message {
+            margin-top: 170px;
+            max-width: 500px;
+            margin-left: 35%;
+            /* margin: 0 auto; */
+        }
+        .success-message i, .error-message i {
+            font-size: 4rem;
+        }
+        .success-message i {
+            color: #28a745;
+        }
+        .error-message i {
+            color: #dc3545;
+        }
+        .success-message h1, .error-message h1 {
+            font-size: 2rem;
+            margin: 20px 0;
+            color: #ffffff;
+        }
+        .success-message p, .error-message p {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        .success-image, .error-image {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+        .actions .btn {
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+</style>
+
+<div class="container-fluid ">
+    <div class="background">
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/cards">Jobs</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+               
+            </ul>
+        </nav>
+        <div class="logo"><span>Job-A-Thon</span></div>
+        <div class="container">
+    
+   
+            <div class="success-message">
+                <i class="fas fa-check-circle"></i>
+                <h1>Application Submitted Successfully!</h1>
+                <p>Thank you for applying. We will review your application and get back to you soon.</p>
+               
+                <div class="actions">
+                    <a href="/" class="btn btn-primary">Go to Home</a>
+                    <a href="/cards" class="btn btn-secondary">View More Jobs</a>
+                </div>
+            </div>
+       
+    </div>
+    </header>
+</div>

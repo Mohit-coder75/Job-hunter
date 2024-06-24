@@ -1,0 +1,383 @@
+<style>
+    .job-card {
+    background-color: rgba(243, 237, 219, 0.6); /* Light grey background with 80% opacity */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); /* Add shadow */
+    transition: transform 0.3s ease-in-out; /* Add transition for smooth hover effect */
+    position: relative; /* Position relative for positioning the actively hiring box */
+}
+    .job-card:hover {
+      transform: translateY(-5px); /* Move card up slightly on hover */
+    }
+    .active-box {
+      background-color: #ac49ed; /* Orange background color */
+      color: white; /* White text color */
+      position: absolute; /* Position absolutely */
+      top: 0; /* Align to the top */
+      left: 0; /* Align to the left */
+      border-top-left-radius: 10px; /* Border radius to match card */
+      border-top-right-radius: 10px; /* Border radius to match card */
+      padding: 8px 12px; /* Padding for the box */
+      font-size: 0.875rem; /* Font size for the box */
+    }
+    .not-hiring-box {
+      background-color: #ff3333; /* Red background color */
+      color: white; /* White text color */
+      position: absolute; /* Position absolutely */
+      top: 0; /* Align to the top */
+      left: 0; /* Align to the left */
+      border-top-left-radius: 10px; /* Border radius to match card */
+      border-top-right-radius: 10px; /* Border radius to match card */
+      padding: 8px 12px; /* Padding for the box */
+      font-size: 0.875rem; /* Font size for the box */
+    }
+    .job-card img {
+      max-width: 100%;
+      height: auto;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    .job-title {
+        color: #000000; /* Orange text color */
+        font-size: 1.5rem; /* Set font size */
+        margin-bottom: 0.5rem; /* Add margin bottom */
+        margin-top: 1.4rem; /* Add top margin */
+        position: relative; /* Position relative for pseudo-element */
+        display: inline-block; /* Make it inline block */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Text shadow effect */
+    }
+
+   
+    .job-info i {
+        color:#000000; /* Inherit color from parent (job title) */
+        margin-right: 4px; /* Add some margin between icon and text */
+    }
+    .job-company {
+      color: #666;
+      font-size: 1rem;
+      margin-bottom: 0.5rem; /* Add margin bottom */
+      font-weight: bold; /* Make text bold */
+    }
+    .job-description {
+      color: #444;
+      font-size: 1rem;
+      margin-bottom: 0.5rem; /* Add margin bottom */
+    }
+    .job-location {
+      color: #777;
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem; /* Add margin bottom */
+    }
+    .job-salary {
+      color: #555;
+      font-size: 1rem;
+      margin-bottom: 0.5rem; /* Add margin bottom */
+    }
+    .job-experience {
+      color: #555;
+      font-size: 1rem; /* Add margin bottom */
+    }
+    .btn-apply {
+      background-color: #ac49ed; /* Orange button */
+      border-color: #ac49ed; /* Orange border for button */
+      transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Add transition for smooth hover effect */
+     
+        width: 50%; /* Adjust width as needed */
+         /* Center the button horizontally */
+        display: block; /* Ensure it takes the width specified */
+        text-align: center; /* Center the text within the button */
+    
+    }
+    .btn-apply:hover {
+      background-color: #ac49ed; /* Darker shade of orange on hover */
+      border-color: #ac49ed; /* Darker shade of orange border on hover */
+    }
+    .btn-view-more {
+      color: #ac49ed !important; /* Blue link color */
+      border: none; /* Remove border */
+      background: none; /* Remove background */
+      cursor: pointer; /* Change cursor to pointer */
+      width: 50%; /* Set width to half */
+      text-align: left;
+      margin-top: -30px; /* Align text to the left */
+    }
+    .btn-view-more:hover {
+      text-decoration: underline; /* Underline text on hover */
+    }
+    .row{
+      display: flex;
+      flex-direction: column;
+    }
+   
+    body {
+        font-family: 'Josefin Sans', sans-serif;
+        box-sizing: border-box;
+        width:100%;
+        height: auto;
+    }
+    .container-fluid {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background: #FFF;
+    }
+    .background {
+        background: linear-gradient(132deg, #FC415A, #591BC5, #212335);
+        background-size: 400% 400%;
+        animation: Gradient 15s ease infinite;
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        padding: 0;
+        margin: 0px;
+    }
+    .cube {
+        position: absolute;
+        top: 80vh;
+        left: 45vw;
+        width: 10px;
+        height: 10px;
+        border: solid 1px #D7D4E4;
+        transform-origin: top left;
+        transform: scale(0) rotate(0deg) translate(-50%, -50%);
+        animation: cube 12s ease-in forwards infinite;
+    }
+    .cube:nth-child(2n) {
+        border-color: #FFF ;
+    }
+    .cube:nth-child(2) {
+        animation-delay: 2s;
+        left: 25vw;
+        top: 40vh;
+    }
+    .cube:nth-child(3) {
+        animation-delay: 4s;
+        left: 75vw;
+        top: 50vh;
+    }
+    .cube:nth-child(4) {
+        animation-delay: 6s;
+        left: 90vw;
+        top: 10vh;
+    }
+    .cube:nth-child(5) {
+        animation-delay: 8s;
+        left: 10vw;
+        top: 85vh;
+    }
+    .cube:nth-child(6) {
+        animation-delay: 10s;
+        left: 50vw;
+        top: 10vh;
+    }
+    header {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    nav {
+        color: #FFF;
+        float: right;
+        margin: 30px 90px;
+    }
+    nav ul {
+        list-style: none;
+    }
+    nav ul li {
+        float: left;
+        transition: .3s;
+    }
+    nav ul li a {
+        text-decoration: none;
+        color: #EFEEF5;
+        transition: .5;
+        font-size: 15px;
+        margin-left: 26px;
+        padding-right: 20px;
+    }
+    nav ul li:hover a {
+        text-decoration: none;
+        color: #591BC5;
+    }
+    nav ul li:hover {
+   
+   background: #EFEEF5;
+   /* text-decoration: none; */
+   /* Add border */
+   border-radius: 5px; /* Add border radius */
+}
+.logo {
+        width: 90px;
+        height: 90px;
+        background: linear-gradient(45deg, #FC415A, #591BC5);
+        margin: 40px 63px;
+        float: left;
+        transform: rotate(-30deg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+    .logo:hover {
+        transform: rotate(-30deg) scale(1.1);
+    }
+    .logo span {
+        color: #FFF;
+        font-size: 1.5em;
+        line-height: 1.4;
+        font-weight: bold;
+        transform: rotate(30deg);
+        padding-left: 7px;
+    }
+    .header-content {
+        margin-top: 25%;
+        text-align: center;
+        color: #EFEEF5;
+    }
+    .header-content h1 {
+        text-transform: uppercase;
+        font-size: 3em;
+        letter-spacing: 1px;
+    }
+    .header-content p {
+        font-size: 20px;
+        line-height: 1.5;
+        margin: 20px auto;
+    }
+    .header-content button {
+        width: 140px;
+        margin: 20px 10px;
+        color: #591BC5;
+        font-size: 17px;
+        border: 1px solid #EFEEF5;
+        font-weight: 500;
+        background: #EFEEF5;
+        border-radius: 20px;
+        padding: 10px;
+        cursor: pointer;
+        transition: .3s;
+    }
+    .header-content button:hover {
+        border-radius: 0;
+    }
+    @keyframes Gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    @keyframes cube {
+        from {
+            transform: scale(0) rotate(0deg) translate(-50%, -50%);
+            opacity: 1;
+        }
+        to {
+            transform: scale(20) rotate(960deg) translate(-50%, -50%);
+            opacity: 0;
+        }
+    }
+
+    .welcome-message {
+            text-align: center;
+            color: white;
+            font-size: 2.5rem; /* Increase font size */
+            font-family: 'Josefin Sans', sans-serif; /* Stylish font */
+            margin-top: 20px;
+            animation: shine 1s ease-in-out infinite;
+            background: linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,1), rgba(255,255,255,0.2));
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+</style>
+
+</head>
+<div class="container-fluid ">
+  <div class="background">
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+  </div>
+  <header>
+      <nav>
+          <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/cards">Jobs</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Portfolio</a></li>
+              <% if (dropdownContent == req.session.userName) { %>
+                <li><a href="/PostJob">Post Jobs</a></li>
+                <li><a href="/logout">Logout</a></li>
+            <% } %>
+          </ul>
+      </nav>
+      <div class="logo"><span>Job-A-Thon</span></div>
+      
+      <div class="container mx-auto px-4 py-8 mt-40 ml-40">
+        <% if (dropdownContent) { %>
+            <p class="welcome-message">Welcome, <%= dropdownContent %>!</p>
+        <% } %>
+        <div class="grid grid-cols-1 mt-20 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <% jobs.forEach(job => { %>
+                <!-- Job Card -->
+                <div class="job-card relative p-6 <% if(job.active) { %>active<% } %>">
+                    <% if(job.active) { %>
+                        <div class="active-box">Actively Hiring</div>
+                    <% } else { %>
+                        <div class="not-hiring-box">Not Hiring</div>
+                    <% } %>
+                    <h2 class="job-title mb-2"><%= job.title %></h2>
+                    <p class="job-company mb-2"><%= job.company %></p>
+                    
+                    <p class="job-info mb-2">
+                        <i class="fas fa-map-marker-alt"></i> <%= job.location %>
+                    </p>
+                    <p class="job-info mb-2">
+                        <i class="fas fa-money-bill-wave"></i> <%= job.salary %>
+                    </p>
+                    <p class="job-info mb-2">
+                        <i class="fas fa-briefcase"></i> <%= job.experience %>
+                    </p>
+                    <div class="row"> 
+                      <a href="/ViewMore/<%= job.id %>" class="btn-view-more w-full py-2 mt-1 rounded-md text-white font-semibold transition duration-300 ease-in-out">View More</a>
+    
+                      <% if (dropdownContent === "Guest") { %>
+                      <a href="/apply/<%= job.id %>" class="btn-apply w-1/2 py-2 rounded-md text-white font-semibold transition duration-300 ease-in-out">Apply Now</a>
+                    
+                      <% }%>
+                    </div>
+                
+                </div>
+                <!-- End Job Card -->
+            <% }); %>
+        </div>
+    </div>
+    
+    <div id="error-container" class="mt-4 text-red-600 text-center">
+        <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+            <div class="bg-white shadow rounded p-4">
+                <ul>
+                    <% errors.forEach(function(error) { %>
+                        <li><%= error.msg %></li>
+                    <% }); %>
+                </ul>
+            </div>
+        <% } %>
+    </div>
+  </header>
+</div>
+

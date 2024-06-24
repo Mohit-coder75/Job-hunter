@@ -1,0 +1,443 @@
+<style>
+    /* Custom CSS styles */
+    body {
+        font-family: 'Josefin Sans', sans-serif;
+        box-sizing: border-box;
+        width:100%;
+        height: auto;
+    }
+    .container-fluid {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background: #FFF;
+    }
+    .background {
+        background: linear-gradient(132deg, #FC415A, #591BC5, #212335);
+        background-size: 400% 400%;
+        animation: Gradient 15s ease infinite;
+        position: relative;
+        height: 150vh;
+        width: 100%;
+        overflow: hidden;
+        padding: 0;
+        margin: 0px;
+    }
+    .cube {
+        position: absolute;
+        top: 80vh;
+        left: 45vw;
+        width: 10px;
+        height: 10px;
+        border: solid 1px #D7D4E4;
+        transform-origin: top left;
+        transform: scale(0) rotate(0deg) translate(-50%, -50%);
+        animation: cube 12s ease-in forwards infinite;
+    }
+    .cube:nth-child(2n) {
+        border-color: #FFF ;
+    }
+    .cube:nth-child(2) {
+        animation-delay: 2s;
+        left: 25vw;
+        top: 40vh;
+    }
+    .cube:nth-child(3) {
+        animation-delay: 4s;
+        left: 75vw;
+        top: 50vh;
+    }
+    .cube:nth-child(4) {
+        animation-delay: 6s;
+        left: 90vw;
+        top: 10vh;
+    }
+    .cube:nth-child(5) {
+        animation-delay: 8s;
+        left: 10vw;
+        top: 85vh;
+    }
+    .cube:nth-child(6) {
+        animation-delay: 10s;
+        left: 50vw;
+        top: 10vh;
+    }
+    header {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    nav {
+        color: #FFF;
+        float: right;
+        margin: 30px 90px;
+    }
+    nav ul {
+        list-style: none;
+    }
+    nav ul li {
+        float: left;
+        transition: .3s;
+    }
+    nav ul li a {
+        text-decoration: none;
+        color: #EFEEF5;
+        transition: .5;
+        font-size: 15px;
+        margin-left: 26px;
+        padding-right: 20px;
+    }
+    nav ul li:hover a {
+        text-decoration: none;
+        color: #591BC5;
+    }
+    nav ul li:hover {
+   
+    background: #EFEEF5;
+    /* text-decoration: none; */
+    /* Add border */
+    border-radius: 5px; /* Add border radius */
+}
+.logo {
+        width: 90px;
+        height: 90px;
+        background: linear-gradient(45deg, #FC415A, #591BC5);
+        margin: 40px 63px;
+        float: left;
+        transform: rotate(-30deg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+    .logo:hover {
+        transform: rotate(-30deg) scale(1.1);
+    }
+    .logo span {
+        color: #FFF;
+        font-size: 1.5em;
+        line-height: 1.4;
+        font-weight: bold;
+        transform: rotate(30deg);
+        padding-left: 7px;
+    }
+    .header-content {
+        margin-top: 25%;
+        text-align: center;
+        color: #EFEEF5;
+    }
+    .header-content h1 {
+        text-transform: uppercase;
+        font-size: 3em;
+        letter-spacing: 1px;
+    }
+    .header-content p {
+        font-size: 20px;
+        line-height: 1.5;
+        margin: 20px auto;
+    }
+    .header-content button {
+        width: 140px;
+        margin: 20px 10px;
+        color: #591BC5;
+        font-size: 17px;
+        border: 1px solid #EFEEF5;
+        font-weight: 500;
+        background: #EFEEF5;
+        border-radius: 20px;
+        padding: 10px;
+        cursor: pointer;
+        transition: .3s;
+    }
+    .header-content button:hover {
+        border-radius: 0;
+    }
+    @keyframes Gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    @keyframes cube {
+        from {
+            transform: scale(0) rotate(0deg) translate(-50%, -50%);
+            opacity: 1;
+        }
+        to {
+            transform: scale(20) rotate(960deg) translate(-50%, -50%);
+            opacity: 0;
+        }
+    }
+
+
+    
+    .banner {
+            width: 90%;
+            height: auto;
+            margin-bottom: 20px;
+            margin-top: 30px;
+            margin-left: 70px;
+
+          
+            
+            
+        }
+.image{
+    border-radius: 5px;
+   
+}
+        
+
+    .job {
+        display: flex;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    width: 90%;
+    margin-left: 70px;
+    background-color: rgba(243, 237, 219, 0.8); 
+    }
+
+    .job-title {
+        color: #ac49ed !important; /* Text color */
+        /* text-shadow: 2px 2px 4px #ac49ed; */
+        font-size: 40px;
+        
+        color: #000000;
+        margin-bottom: 10px;
+    }
+
+    .job-details {
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+    .apply-by {
+        font-style: italic;
+        color: #000000;
+    }
+
+    .skills {
+        margin-top: 10px;
+    }
+
+    .skill {
+        display: inline-block;
+        background-color: #f0f0f0;
+        color: #000000;
+        padding: 5px 10px;
+        border-radius: 15px;
+        margin-right: 10px;
+        margin-bottom: 5px;
+    }
+    .job-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.company-icon,
+.location-icon,
+.salary-icon,
+.experience-icon,
+.apply-by-icon {
+    color: rgb(0, 0, 0); /* Set icon color to orange */
+    margin-right: 10px;
+}
+
+.edit-delete-icons {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+}
+.job {
+    position: relative;
+}
+.edit-icon {
+    margin-right: 15px; /* Adjust as needed */
+}
+
+
+.company-name,
+.location,
+.salary,
+.experience,
+.apply-by-date {
+    font-size: 16px; /* Increase font size */
+}
+.btn-apply {
+    
+    background-color: #ac49ed; /* Orange button */
+      border-color: #ac49ed; /* Orange border for button */
+      transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Add transition for smooth hover effect */
+     
+        width: 50%; /* Adjust width as needed */
+         /* Center the button horizontally */
+        display: block; /* Ensure it takes the width specified */
+        text-align: center; /* Center the text within the button */
+      
+    }
+    .btn-apply:hover {
+      background-color: #ac49ed; /* Darker shade of orange on hover */
+      border-color: #ac49ed; /* Darker shade of orange border on hover */
+    }
+    .discription{
+        width: 50%;
+        margin-top: 60px;
+        color: #000000;
+        margin-left: 30px;
+    }
+    
+</style>
+
+<div class="container-fluid ">
+    <div class="background">
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/cards">Jobs</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <% if (dropdownContent !== "Guest") { %>
+                    <li><a href="/PostJob">Post Jobs</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                <% } %>
+            </ul>
+        </nav>
+        <div class="logo"><span>Job-A-Thon</span></div>
+        <div class="container">
+    
+            <!-- Banner Image -->
+            <div class="banner">
+                <img src="https://files.codingninjas.com/web-banner-28759.png" alt="Banner Image" class="image" >
+            </div>
+           
+        
+        <main>
+           <!-- Job Details -->
+    <div class="job">
+        
+        <div>
+            <div class="job-title"><%= job.title %></div>
+            <div class="job-details">
+                <!-- Company -->
+                <div class="job-info">
+                    <i class="fas fa-building company-icon"></i>
+                    <strong class="company-label">Company:</strong>
+                    <span class="company-name"><%= job.company %></span>
+                </div>
+                <!-- Location -->
+                <div class="job-info">
+                    <i class="fas fa-map-marker-alt location-icon"></i>
+                    <strong class="location-label">Location:</strong>
+                    <span class="location"><%= job.location %></span>
+                </div>
+                <!-- Salary -->
+                <div class="job-info">
+                    <i class="fas fa-money-bill-wave salary-icon"></i>
+                    <strong class="salary-label">Salary:</strong>
+                    <span class="salary"><%= job.salary %></span>
+                </div>
+                <!-- Experience -->
+                <div class="job-info">
+                    <i class="fas fa-briefcase experience-icon"></i>
+                    <strong class="experience-label">Experience:</strong>
+                    <span class="experience"><%= job.experience %></span>
+                </div>
+                <% if (dropdownContent === req.session.userName) { %>
+                    <div class="job-info">
+                        <i class="fas fa-users experience-icon"></i> <!-- Different icon class -->
+                        <a href="/application/<%= job.id %>" class="experience-label"> <!-- Anchor wrapping the label -->
+                            <strong>Applicants:</strong>
+                        </a>
+                        <span class="experience">
+                            <%= job.applicants %>
+                        </span>
+                    </div>
+                <% } else { %>
+                    <div class="job-info">
+                        <i class="fas fa-users experience-icon"></i> <!-- Different icon class -->
+                        <span class="experience-label"> <!-- Plain text label -->
+                            <strong>Applicants:</strong>
+                        </span>
+                        <span class="experience">
+                            <%= job.applicants %>
+                        </span>
+                    </div>
+                <% } %>
+                
+                
+                <!-- Apply By -->
+                <div class="job-info apply-by">
+                    <i class="far fa-calendar-alt apply-by-icon"></i>
+                    <strong class="apply-by-label">Apply By:</strong>
+                    <span class="apply-by-date"><%= job.applyBy %></span>
+                </div>
+                <!-- Edit and Delete Icons -->
+              
+            </div>
+            <!-- Skills -->
+            <div class="skills">
+                <strong>Skills:</strong>
+                <% if (job.skills && Array.isArray(job.skills)) { %>
+                    <div class="skills">
+                        <% job.skills.forEach(skill => { %>
+                            <span class="skill"><%= skill %></span>
+                        <% }) %>
+                    </div>
+                <% } else { %>
+                    <p>No skills specified</p>
+                <% } %>
+            </div>
+            <!-- Apply Button -->
+            <% if (dropdownContent === "Guest") { %>
+            <a href="/apply/<%= job.id %>" class="btn-apply w-1/2 py-2 rounded-md text-white font-semibold transition duration-300 ease-in-out">Apply Now</a>
+            <% }%>
+        </div>
+        <!-- Job Description -->
+        <div class="discription">
+            <div class="job-info">
+                <p class="description"><%= job.description %></p>
+            </div>
+        </div>
+        <% if (dropdownContent === req.session.userName) { %>
+            <div class="edit-delete-icons">
+                <a href="/editJob/<%= job.id %>" class="edit-link">
+                    <i class="fas fa-edit edit-icon" title="Edit"></i>
+                </a>
+                <form action="/delete/<%= job.id %>" method="POST" class="delete-form">
+                    <button type="submit" class="delete-button">
+                        <i class="fas fa-trash delete-icon" title="Delete"></i>
+                    </button>
+                </form>
+            </div>
+        <% } %>
+    </div>
+            
+            
+    
+            
+        </main>
+        
+    </div>
+    </header>
+</div>
+

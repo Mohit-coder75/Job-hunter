@@ -1,0 +1,318 @@
+
+  <style>
+   
+    body {
+        font-family: 'Josefin Sans', sans-serif;
+        box-sizing: border-box;
+        width:100%;
+        height: auto;
+    }
+    .container-fluid {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background: #FFF;
+    }
+    .background {
+        background: linear-gradient(132deg, #FC415A, #591BC5, #212335);
+        background-size: 400% 400%;
+        animation: Gradient 15s ease infinite;
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        padding: 0;
+        margin: 0px;
+    }
+    .cube {
+        position: absolute;
+        top: 80vh;
+        left: 45vw;
+        width: 10px;
+        height: 10px;
+        border: solid 1px #D7D4E4;
+        transform-origin: top left;
+        transform: scale(0) rotate(0deg) translate(-50%, -50%);
+        animation: cube 12s ease-in forwards infinite;
+    }
+    .cube:nth-child(2n) {
+        border-color: #FFF ;
+    }
+    .cube:nth-child(2) {
+        animation-delay: 2s;
+        left: 25vw;
+        top: 40vh;
+    }
+    .cube:nth-child(3) {
+        animation-delay: 4s;
+        left: 75vw;
+        top: 50vh;
+    }
+    .cube:nth-child(4) {
+        animation-delay: 6s;
+        left: 90vw;
+        top: 10vh;
+    }
+    .cube:nth-child(5) {
+        animation-delay: 8s;
+        left: 10vw;
+        top: 85vh;
+    }
+    .cube:nth-child(6) {
+        animation-delay: 10s;
+        left: 50vw;
+        top: 10vh;
+    }
+    header {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    nav {
+        color: #FFF;
+        float: right;
+        margin: 30px 90px;
+    }
+    nav ul {
+        list-style: none;
+    }
+    nav ul li {
+        float: left;
+        transition: .3s;
+    }
+    nav ul li a {
+        text-decoration: none;
+        color: #EFEEF5;
+        transition: .5;
+        font-size: 15px;
+        margin-left: 26px;
+        padding-right: 20px;
+    }
+    nav ul li:hover a {
+        text-decoration: none;
+        color: #591BC5;
+    }
+    nav ul li:hover {
+   
+    background: #EFEEF5;
+    /* text-decoration: none; */
+    /* Add border */
+    border-radius: 5px; /* Add border radius */
+}
+.logo {
+        width: 90px;
+        height: 90px;
+        background: linear-gradient(45deg, #FC415A, #591BC5);
+        margin: 40px 63px;
+        float: left;
+        transform: rotate(-30deg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+    .logo:hover {
+        transform: rotate(-30deg) scale(1.1);
+    }
+    .logo span {
+        color: #FFF;
+        font-size: 1.5em;
+        line-height: 1.4;
+        font-weight: bold;
+        transform: rotate(30deg);
+        padding-left: 7px;
+    }
+    .header-content {
+        margin-top: 25%;
+        text-align: center;
+        color: #EFEEF5;
+    }
+    .header-content h1 {
+        text-transform: uppercase;
+        font-size: 3em;
+        letter-spacing: 1px;
+    }
+    .header-content p {
+        font-size: 20px;
+        line-height: 1.5;
+        margin: 20px auto;
+    }
+    .header-content button {
+        width: 140px;
+        margin: 20px 10px;
+        color: #591BC5;
+        font-size: 17px;
+        border: 1px solid #EFEEF5;
+        font-weight: 500;
+        background: #EFEEF5;
+        border-radius: 20px;
+        padding: 10px;
+        cursor: pointer;
+        transition: .3s;
+    }
+    .header-content button:hover {
+        border-radius: 0;
+    }
+    @keyframes Gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    @keyframes cube {
+        from {
+            transform: scale(0) rotate(0deg) translate(-50%, -50%);
+            opacity: 1;
+        }
+        to {
+            transform: scale(20) rotate(960deg) translate(-50%, -50%);
+            opacity: 0;
+        }
+    }
+
+ 
+    form {
+    width: 500px; /* Adjust width as needed */
+    background-color: rgba(250, 250, 250, 0.4); /* Light grey background with 80% opacity */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Add shadow */
+}
+    .center{
+      display: flex;
+      justify-content: center;
+    }
+    .form-control {
+    background-color: rgba(249, 241, 231, 0.5); /* Light orange background with 50% opacity */
+    border: 1px solid #ced4da; /* Add border for contrast */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    padding: 8px 12px; /* Add padding for better appearance */
+    width: 100%; /* Ensure the input fields fill the available space */
+}
+    .btn-primary {
+      background-color: #591BC5; /* Orange button */
+      border-color: #591BC5; /* Orange border for button */
+    }
+    .btn-primary:hover {
+      background-color: #44257a; /* Darker shade of orange on hover */
+      border-color: #44257a; /* Darker shade of orange border on hover */
+    }
+    h1 {
+      text-align: center; /* Center align the heading */
+      margin-bottom: 20px; /* Add some space below the heading */
+      color: #000000;
+      font-size: 1.5rem; /* Set color to dark grey */
+    }
+    label{
+      color: #000000;
+    }
+    p{
+      color: #000000;
+    }
+    
+    .custom-width-200 {
+  width: 400px;
+}
+.link-color {
+    color: #44257a;
+  }
+  </style>
+
+
+<div class="container-fluid ">
+  <div class="background">
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+  </div>
+  <header>
+      <nav>
+          <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/cards">Jobs</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Portfolio</a></li>
+              <% if (dropdownContent == req.session.userName) { %>
+                <li><a href="/PostJob">Post Jobs</a></li>
+                <li><a href="/logout">Logout</a></li>
+            <% } %>
+              
+          </ul>
+      </nav>
+      <div class="logo"><span>Job-A-Thon</span></div>
+      <div class="container mt-40 ">
+        <div class="center">
+          <form action="/register" method="post" class="p-5">
+            <h1>Register</h1>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                name="name"
+                type="text"
+                class="form-control"
+                id="name"
+                aria-describedby="emailHelp"
+                placeholder="Enter Your Name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                name="email"
+                type="email"
+                class="form-control"
+                id="email"
+                aria-describedby="emailHelp"
+                placeholder="Enter Your Email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                name="password"
+                class="form-control"
+                id="password"
+                aria-describedby="passwordHelp"
+                placeholder="Enter Your Password"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary mt-6">Register</button>
+            <div class="center mt-4">
+              <p class="text-center">
+                Already Registered? <a href="/login" class="link-color">Login</a>
+              </p>
+            </div>
+          </form>
+        </div>
+      
+          <!-- Error display section -->
+        <!-- Error display section -->
+       
+        <div id="error-container" class="mt-4 flex justify-center text-red-600 text-center">
+          <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+            <div class="bg-white shadow rounded p-4 custom-width-200">
+              <ul>
+                <% errors.forEach(function(error) { %>
+                  <li><%= error.msg %></li>
+                <% }); %>
+              </ul>
+            </div>
+          <% } %>
+        </div>
+        </div>
+  </header>
+</div>
+

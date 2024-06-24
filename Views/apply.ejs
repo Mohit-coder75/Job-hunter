@@ -1,0 +1,372 @@
+<style>
+   body {
+        font-family: 'Josefin Sans', sans-serif;
+        box-sizing: border-box;
+        width:100%;
+        height: auto;
+    }
+    .container-fluid {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background: #FFF;
+    }
+    .background {
+        background: linear-gradient(132deg, #FC415A, #591BC5, #212335);
+        background-size: 400% 400%;
+        animation: Gradient 15s ease infinite;
+        position: relative;
+        height: 150vh;
+        width: 100%;
+        overflow: hidden;
+        padding: 0;
+        margin: 0px;
+    }
+    .cube {
+        position: absolute;
+        top: 80vh;
+        left: 45vw;
+        width: 10px;
+        height: 10px;
+        border: solid 1px #D7D4E4;
+        transform-origin: top left;
+        transform: scale(0) rotate(0deg) translate(-50%, -50%);
+        animation: cube 12s ease-in forwards infinite;
+    }
+    .cube:nth-child(2n) {
+        border-color: #FFF ;
+    }
+    .cube:nth-child(2) {
+        animation-delay: 2s;
+        left: 25vw;
+        top: 40vh;
+    }
+    .cube:nth-child(3) {
+        animation-delay: 4s;
+        left: 75vw;
+        top: 50vh;
+    }
+    .cube:nth-child(4) {
+        animation-delay: 6s;
+        left: 90vw;
+        top: 10vh;
+    }
+    .cube:nth-child(5) {
+        animation-delay: 8s;
+        left: 10vw;
+        top: 85vh;
+    }
+    .cube:nth-child(6) {
+        animation-delay: 10s;
+        left: 50vw;
+        top: 10vh;
+    }
+    header {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    nav {
+        color: #FFF;
+        float: right;
+        margin: 30px 90px;
+    }
+    nav ul {
+        list-style: none;
+    }
+    nav ul li {
+        float: left;
+        transition: .3s;
+    }
+    nav ul li a {
+        text-decoration: none;
+        color: #EFEEF5;
+        transition: .5;
+        font-size: 15px;
+        margin-left: 26px;
+        padding-right: 20px;
+    }
+    nav ul li:hover a {
+        text-decoration: none;
+        color: #591BC5;
+    }
+    nav ul li:hover {
+   
+    background: #EFEEF5;
+    /* text-decoration: none; */
+    /* Add border */
+    border-radius: 5px; /* Add border radius */
+}
+.logo {
+        width: 90px;
+        height: 90px;
+        background: linear-gradient(45deg, #FC415A, #591BC5);
+        margin: 40px 63px;
+        float: left;
+        transform: rotate(-30deg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+    .logo:hover {
+        transform: rotate(-30deg) scale(1.1);
+    }
+    .logo span {
+        color: #FFF;
+        font-size: 1.5em;
+        line-height: 1.4;
+        font-weight: bold;
+        transform: rotate(30deg);
+        padding-left: 7px;
+    }
+    .header-content {
+        margin-top: 25%;
+        text-align: center;
+        color: #EFEEF5;
+    }
+    .header-content h1 {
+        text-transform: uppercase;
+        font-size: 3em;
+        letter-spacing: 1px;
+    }
+    .header-content p {
+        font-size: 20px;
+        line-height: 1.5;
+        margin: 20px auto;
+    }
+    .header-content button {
+        width: 140px;
+        margin: 20px 10px;
+        color: #591BC5;
+        font-size: 17px;
+        border: 1px solid #EFEEF5;
+        font-weight: 500;
+        background: #EFEEF5;
+        border-radius: 20px;
+        padding: 10px;
+        cursor: pointer;
+        transition: .3s;
+    }
+    .header-content button:hover {
+        border-radius: 0;
+    }
+    @keyframes Gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    @keyframes cube {
+        from {
+            transform: scale(0) rotate(0deg) translate(-50%, -50%);
+            opacity: 1;
+        }
+        to {
+            transform: scale(20) rotate(960deg) translate(-50%, -50%);
+            opacity: 0;
+        }
+    }
+
+    form {
+      width: 650px; /* Adjust width as needed */
+      background-color: rgba(250, 250, 250, 0.4);/* Light grey background */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Add shadow */
+    }
+    .center{
+     margin-top: 170px;
+     margin-left: 28%;
+    }
+    .form-control {
+      background-color: rgba(249, 241, 231, 0.5);  /* Light orange background for fields */
+      width: 100%; /* Make input fields full-width */
+      margin-bottom: 10px; /* Add space between fields */
+      border-radius: 5px; /* Add border radius */
+      border: 1px solid #ddd; /* Add border */
+      padding: 8px; /* Add padding */
+      box-sizing: border-box; /* Include padding and border in element's total width and height */
+    }
+    .btn-primary {
+      background-color: #591BC5; /* Orange button */
+      border-color: #591BC5; /* Orange border for button */
+      width: 100%; /* Make button full-width */
+      padding: 10px; /* Add padding */
+      border-radius: 5px; /* Add border radius */
+      cursor: pointer; /* Change cursor to pointer on hover */
+    }
+    .btn-primary:hover {
+      background-color: #591BC5; /* Darker shade of orange on hover */
+      border-color: #591BC5; /* Darker shade of orange border on hover */
+    }
+    h1 {
+      text-align: center; /* Center align the heading */
+      margin-bottom: 20px; /* Add some space below the heading */
+      color: #000000;
+      font-size: 1.5rem; /* Set color to dark grey */
+    }
+    .form-group {
+      width: 100%; /* Make each group full-width */
+    }
+    .row {
+      display: flex; /* Ensure flex display for proper alignment */
+      flex-wrap: wrap; /* Allow wrapping for smaller screens */
+      margin-bottom: 10px; /* Add space between rows */
+    }
+    .row .form-group {
+      width: calc(50% - 10px); /* Adjust width to fit two columns with space between */
+      margin-right: 10px; /* Add space between form groups */
+    }
+    .btn-upload {
+  background-color: #591BC5; /* Orange button for upload */
+  border-color: #591BC5; /* Orange border for button */
+  color: #fff; /* White text color */
+  width: calc(100% - 20px); /* Make button full-width with some margin */
+  padding: 10px; /* Add padding */
+  border-radius: 5px; /* Add border radius */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  text-align: center; /* Center align text */
+  margin: 10px auto; /* Center button horizontally with some margin */
+  display: inline-block; /* Make button inline block */
+}
+.btn-upload:hover {
+  background-color: #591BC5; /* Darker shade of orange on hover */
+  border-color: #591BC5; /* Darker shade of orange border on hover */
+}
+
+/* Hide default file input */
+.form-control-file {
+  display: none;
+}
+
+  </style>
+
+<div class="container-fluid ">
+  <div class="background">
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+  </div>
+  <header>
+      <nav>
+          <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/cards">Jobs</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Portfolio</a></li>
+              <% if (dropdownContent == req.session.userName) { %>
+                  <li><a href="/PostJob">Post Jobs</a></li>
+                  <li><a href="/logout">Logout</a></li>
+              <% } %>
+          </ul>
+      </nav>
+      <div class="logo"><span>Job-A-Thon</span></div>
+      <% if (job) { %>
+        <div class="container">
+          <div class="center">
+            <form action="/apply/<%= job.id %>" method="post" enctype="multipart/form-data" class="p-5">
+              <h1>Apply for a Job</h1>
+              <div class="row">
+                <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input
+                    name="name"
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="Enter Your Full Name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input
+                    name="email"
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Enter Your Email Address"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group">
+                  <label for="phone" style="margin-bottom: 10px;">Phone Number</label>
+                  <input
+                    name="phone"
+                    type="tel"
+                    class="form-control"
+                    id="phone"
+                    placeholder="Enter Your Phone Number"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="resume">Upload Resume</label>
+                  <label for="resume" class="btn btn-upload">Choose File</label>
+                  <input
+                    type="file"
+                    name="resume"
+                    class="form-control-file d-none"
+                    id="resume"
+                    accept=".pdf,.doc,.docx"
+                    required
+                  />
+                  <small id="resumeHelp" class="form-text text-muted">Accepted formats: PDF, DOC, DOCX</small>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="cover-letter">Cover Letter (optional)</label>
+                <textarea
+                  name="cover_letter"
+                  class="form-control"
+                  id="cover-letter"
+                  rows="4"
+                  placeholder="Write a brief cover letter explaining your interest and qualifications for the job"
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="portfolio">Portfolio (optional)</label>
+                <input
+                  name="portfolio"
+                  type="url"
+                  class="form-control"
+                  id="portfolio"
+                  placeholder="Enter the URL to your online portfolio (if applicable)"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary mt-2">Apply Now</button>
+            </form>
+          </div>
+        
+          <!-- Error display section -->
+          <div id="error-container" class="mt-4 text-red-600 text-center">
+            <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+              <div class="bg-white shadow rounded p-4">
+                <ul>
+                  <% errors.forEach(function(error) { %>
+                    <li><%= error.msg %></li>
+                  <% }); %>
+                </ul>
+              </div>
+            <% } %>
+          </div>
+        </div>
+        <% } %>
+  </header>
+</div>
+ 
