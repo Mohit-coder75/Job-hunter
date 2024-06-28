@@ -1,6 +1,6 @@
 Job Portal Application
 
-Click to this link to visit website: https://job-a-thon.onrender.com/
+Click to this link to visit website: https://job-hunter-1-6hv9.onrender.com/
 
 Overview
 This project is a Job Portal Application that allows recruiters to manage job postings and applicants to apply for jobs. It implements an MVC architecture using Express.js and provides dynamic server-side rendering with EJS. The application ensures modularity, session management, and efficient handling of user data and job management operations.
@@ -42,10 +42,6 @@ Implement routes for user and job operations.
 Implement session-based user authentication and management.
 Set up middleware for file uploads using Multer, send confirmation emails using Nodemailer, and track user visits using cookies.
 Document the application explaining functionalities, dependencies, and code organization for easy understanding of the codebase.
-
-![image](https://github.com/Ayushjaiswal2000/Job-A-Thon/assets/86403516/444b02a8-266f-4d2c-bad0-5cde955ac88b)
-![image](https://github.com/Ayushjaiswal2000/Job-A-Thon/assets/86403516/0fe9d865-2c08-4c27-8d49-9827421a160c)
-![image](https://github.com/Ayushjaiswal2000/Job-A-Thon/assets/86403516/742deea9-73cb-4243-a514-734f5e241d51)
 
 
 
